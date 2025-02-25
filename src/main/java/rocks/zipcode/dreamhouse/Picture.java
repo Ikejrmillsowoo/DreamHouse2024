@@ -14,9 +14,15 @@ package rocks.zipcode.dreamhouse;
 public class Picture
 {
     private Square wall;
+    private Square biggerWall;
     private Square window;
+    private Square window2;
+    private Square bigWindow;
     private Triangle roof;
+    private Triangle innerRoof;
+    private Triangle topRoof;
     private Circle sun;
+
 
     /**
      * Constructor for objects of class Picture
@@ -35,24 +41,57 @@ public class Picture
         wall.moveVertical(80);
         wall.changeSize(100);
         wall.makeVisible();
+        wall.changeColor("blue");
+
+        biggerWall = new Square();
+        biggerWall.moveVertical(60);
+        biggerWall.changeSize(120);
+        biggerWall.makeVisible();
+        biggerWall.moveHorizontal(100);
+        biggerWall.changeColor("blue");
 
         window = new Square();
         window.changeColor("black");
-        window.moveHorizontal(20);
+        window.moveHorizontal(10);
         window.moveVertical(100);
         window.makeVisible();
 
+        window2 = new Square();
+        window2.changeColor("black");
+        window2.moveHorizontal(60);
+        window2.moveVertical(100);
+        window2.makeVisible();
+
+        bigWindow = new Square();
+        bigWindow.changeColor("black");
+        bigWindow.moveHorizontal(105);
+        bigWindow.moveVertical(80);
+        bigWindow.changeSize(45);
+        bigWindow.makeVisible();
+
         roof = new Triangle();
-        roof.changeSize(50, 140);
+        roof.changeSize(50, 110);
         roof.moveHorizontal(60);
-        roof.moveVertical(70);
+        roof.moveVertical(60);
         roof.makeVisible();
+
+        innerRoof = new Triangle();
+        innerRoof.changeSize(60, 140);
+        innerRoof.moveHorizontal(170);
+        innerRoof.moveVertical(30);
+        innerRoof.makeVisible();
+
+        topRoof = new Triangle();
+        topRoof.changeSize(60, 140);
+        topRoof.moveHorizontal(170);
+        topRoof.moveVertical(30);
+        topRoof.makeVisible();
 
         sun = new Circle();
         sun.changeColor("yellow");
-        sun.moveHorizontal(180);
-        sun.moveVertical(-10);
-        sun.changeSize(60);
+        sun.moveHorizontal(10);
+        sun.moveVertical(-30);
+        sun.changeSize(40);
         sun.makeVisible();
     }
 
@@ -64,8 +103,13 @@ public class Picture
         if(wall != null)   // only if it's painted already...
         {
             wall.changeColor("black");
+            biggerWall.changeColor("black");
             window.changeColor("white");
+            window2.changeColor("white");
+            bigWindow.changeColor("white");
             roof.changeColor("black");
+            innerRoof.changeColor("black");
+            topRoof.changeColor("black");
             sun.changeColor("black");
         }
     }
@@ -78,8 +122,13 @@ public class Picture
         if(wall != null)   // only if it's painted already...
         {
             wall.changeColor("red");
+            biggerWall.changeColor("blue");
             window.changeColor("black");
+            window2.changeColor("black");
+            bigWindow.changeColor("white");
             roof.changeColor("green");
+            innerRoof.changeColor("blue");
+            topRoof.changeColor("blue");
             sun.changeColor("yellow");
         }
     }
