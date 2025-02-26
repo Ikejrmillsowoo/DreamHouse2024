@@ -25,8 +25,11 @@ public class Picture
     private Square canvas;
     private Square biggerWall2;
     private Square driveWay;
+    private Square chimney;
+    private Square chimney1;
     private Triangle roof;
     private Triangle innerRoof;
+    private Triangle tree;
     private Triangle topRoof;
     private Circle sun;
 
@@ -44,12 +47,39 @@ public class Picture
      */
     public void draw()
     {
+        //main background
         canvas = new Square();
         canvas.moveVertical(-100);
         canvas.moveHorizontal(-150);
         canvas.changeSize(1200);
         canvas.makeVisible();
         canvas.changeColor("cyan");
+
+        //trees
+
+        tree = new Triangle();
+        tree.changeSize(150,50);
+        tree.changeColor("green");
+        tree.moveHorizontal(280);
+        tree.makeVisible();
+
+        tree = new Triangle();
+        tree.changeSize(200,60);
+        tree.changeColor("green");
+        tree.moveHorizontal(300);
+        tree.makeVisible();
+
+        tree = new Triangle();
+        tree.changeSize(250,30);
+        tree.changeColor("green");
+        tree.moveHorizontal(350);
+        tree.makeVisible();
+
+        tree = new Triangle();
+        tree.changeSize(160,50);
+        tree.changeColor("green");
+        tree.moveHorizontal(180);
+        tree.makeVisible();
 
         lawn = new Square();
         lawn.moveVertical(280);
@@ -58,12 +88,35 @@ public class Picture
         lawn.makeVisible();
         lawn.changeColor("green");
 
+        sun = new Circle();
+        sun.changeColor("red");
+        sun.moveHorizontal(200);
+        sun.moveVertical(30);
+        sun.changeSize(120);
+        sun.makeVisible();
+        sun.changeColor("yellow");
+
         biggerWall2 = new Square();
         biggerWall2.moveVertical(140);
         biggerWall2.changeSize(140);
         biggerWall2.makeVisible();
         biggerWall2.moveHorizontal(220);
         biggerWall2.changeColor("blue");
+
+        //Chimney
+        chimney = new Square();
+        chimney.changeColor("white");
+        chimney.makeVisible();
+        chimney.moveHorizontal(220);
+        chimney.changeSize(35);
+        chimney.moveVertical(65);
+
+        chimney1 = new Square();
+        chimney1.changeColor("white");
+        chimney1.makeVisible();
+        chimney1.moveHorizontal(220);
+        chimney1.changeSize(35);
+        chimney1.moveVertical(95);
 
         //third roof - biggest roof
         innerRoof = new Triangle();
@@ -72,12 +125,6 @@ public class Picture
         innerRoof.moveVertical(90);
         innerRoof.makeVisible();
         innerRoof.changeColor("magenta");
-
-        wall = new Square();
-        wall.changeColor("white");
-        wall.makeVisible();
-        wall.moveHorizontal(250);
-
 
 
         wall = new Square();
@@ -148,19 +195,19 @@ public class Picture
         bigWindow2.changeSize(45);
         bigWindow2.makeVisible();
 
-        //windows to main house
+        //garage door to main house
         bigWindow2 = new Square();
         bigWindow2.changeColor("white");
-        bigWindow2.moveHorizontal(265);
-        bigWindow2.moveVertical(175);
-        bigWindow2.changeSize(60);
+        bigWindow2.moveHorizontal(245);
+        bigWindow2.moveVertical(190);
+        bigWindow2.changeSize(95);
         bigWindow2.makeVisible();
 
         bigWindow2 = new Square();
         bigWindow2.changeColor("black");
-        bigWindow2.moveHorizontal(265);
-        bigWindow2.moveVertical(175);
-        bigWindow2.changeSize(55);
+        bigWindow2.moveHorizontal(250);
+        bigWindow2.moveVertical(200);
+        bigWindow2.changeSize(85);
         bigWindow2.makeVisible();
 
         door = new Square();
@@ -190,14 +237,6 @@ public class Picture
         topRoof.moveVertical(135);
         topRoof.makeVisible();
         topRoof.changeColor("magenta");
-
-        sun = new Circle();
-        sun.changeColor("red");
-        sun.moveHorizontal(10);
-        sun.moveVertical(-30);
-        sun.changeSize(50);
-        sun.makeVisible();
-        sun.changeColor("yellow");
 
         sun = new Circle();
         sun.changeColor("black");
@@ -338,6 +377,9 @@ public class Picture
             innerRoof.changeColor("black");
             topRoof.changeColor("black");
             sun.changeColor("black");
+            chimney.changeColor("black");
+            chimney1.changeColor("black");
+            tree.changeColor("black");
         }
     }
 
@@ -364,6 +406,9 @@ public class Picture
             innerRoof.changeColor("blue");
             topRoof.changeColor("blue");
             sun.changeColor("yellow");
+            chimney.changeColor("white");
+            chimney1.changeColor("white");
+            tree.changeColor("white");
         }
     }
 
